@@ -12,10 +12,11 @@ module.exports = skipTransition;
  * @param {Object} thisArg
  * @api public
  */
-function skipTransition(el, fn, thisArg) {
+function skipTransition(el, fn) {
   skipTransition.setTransitionProperty(el, 'none');
   raf(
-    fn.bind(thisArg, function() {
+    fn.bind(null, function() {
+      console.log('skip done');
       raf(skipTransition.setTransitionProperty.bind(null, el, ''));
     })
   );
