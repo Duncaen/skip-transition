@@ -1,4 +1,5 @@
-var raf = require('raf');
+var raf = require('raf'),
+    has = require('has-transitions');
 
 /**
  * Export `skipTransition`
@@ -26,9 +27,11 @@ function skipTransition(el, fn) {
  *
  *
  */
-function setTransitionProperty(els, value) {
+function setTransitionProperty(el, value) {
+  var els = [el];
+  els.push([].slice.call(el.getElementByTagName('*')));
   els.forEach(function(el, idx, arr) {
-    if(!el || !el.style) return;
+    if(!el || !has(el)) return;
     el.style.webkitTransitionProperty =
     el.style.mozTransitionProperty =
     el.style.msTransitionProperty =
