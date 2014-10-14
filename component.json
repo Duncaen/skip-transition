@@ -1,0 +1,13 @@
+{
+  "name": "skip-transition",
+  "repo": "Duncaen/skip-transition",
+  "description": "",
+  "version": "0.0.1",
+  "keywords": ["skip", "transitions", "transition", "disable"],
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": ["index.js"],
+  "dependencies": {
+    "component/raf": "*"
+  }
+}
