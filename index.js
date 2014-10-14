@@ -28,7 +28,7 @@ function skipTransition(el, fn) {
  *
  */
 function setTransitionProperty(el, value) {
-  var els = [el].concat([].slice.call(el.getElementByTagName('*')));
+  var els = [el].concat([].slice.call(el.getElementsByTagName('*')));
   els.forEach(function(el, idx, arr) {
     if(!el || !has(el)) return;
     el.style.webkitTransitionProperty =
